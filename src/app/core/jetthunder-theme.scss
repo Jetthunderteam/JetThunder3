@@ -1,0 +1,62 @@
+/*************************
+Imports
+**************************/
+@import '~@angular/material/core/theming/all-theme';
+@import "jt-variables";
+
+
+// Include the base styles for Angular Material core. We include this here so that you only
+// have to load a single css file for Angular Material in your app.
+@include md-core();
+
+// Define the palettes for your theme using the Material Design palettes available in palette.scss
+// (imported above). For each palette, you can optionally specify a default, lighter, and darker
+// hue.
+
+$jt-theme-primary: md-palette($md-blue);
+$jt-theme-accent:  md-palette($md-green, A200, A100, A400);
+
+// The warn palette is optional (defaults to red).
+$jt-theme-warn:    md-palette($md-red);
+
+// Create the theme object (a Sass map containing all of the palettes).
+$jt-theme: md-light-theme($jt-theme-primary, $jt-theme-accent, $jt-theme-warn);
+
+// Include theme styles for core and each component used in your app.
+// Alternatively, you can import and @include the theme mixins for each component
+// that you are using.
+@include angular-material-theme($jt-theme);
+
+/*example palette
+$md-green: (
+  50: #e8f5e9,
+  100: #c8e6c9,
+  200: #a5d6a7,
+  300: #81c784,
+  400: #66bb6a,
+  500: #4caf50,
+  600: #43a047,
+  700: #388e3c,
+  800: #2e7d32,
+  900: #1b5e20,
+  A100: #b9f6ca,
+  A200: #69f0ae,
+  A400: #00e676,
+  A700: #00c853,
+  contrast: (
+    50: $black-87-opacity,
+    100: $black-87-opacity,
+    200: $black-87-opacity,
+    300: $black-87-opacity,
+    400: $black-87-opacity,
+    500: white,
+    600: white,
+    700: white,
+    800: $white-87-opacity,
+    900: $white-87-opacity,
+    A100: $black-87-opacity,
+    A200: $black-87-opacity,
+    A400: $black-87-opacity,
+    A700: $black-87-opacity,
+  )
+)*/
